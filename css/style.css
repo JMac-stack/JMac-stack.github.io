@@ -1,0 +1,137 @@
+/*** GENERAL STYLING ***/
+body {
+    margin: 0%;
+    font-family: monospace;
+}
+
+.white_text {
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: 330px;
+    display: block;
+    margin: auto;
+}
+
+/*** NAV BAR***/
+.navbar {
+    overflow: hidden;
+    background-color: blue;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    position: relative;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.navbar a:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+@media screen and (max-width: 576px) {
+    .navbar a {
+        width: 25%; /* This makes each link take up 1/4 of the navbar */
+        font-size: 12px;
+        padding: 15px 0 15px 0;
+        color: yellow;
+    }
+}
+
+/*** HOME ***/
+
+#video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    padding: 100px 0 20px 0;
+    position: relative;
+}
+
+@media screen and (max-width: 576px) {
+    #video {
+        display: none;
+    }
+}
+
+/*** TABLE STYLING ***/
+
+* {
+    box-sizing:border-box;
+}
+
+.column_1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: white;
+}
+
+@media screen and (max-width: 576px) {
+    .column_1 {
+        overflow: auto;
+    }
+}
+
+.column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: darkblue;
+}
+
+.column_tall {
+    height: 500px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*** CONTACT ***/
+
+input[type=text] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+/*** FOOTER ***/
+footer {
+    padding: 2%;
+    background-color: white;
+}

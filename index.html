@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--Head-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>James Mclauchlan's Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+
+    <!--body-->
+    <body>
+        
+        <!--Navbar-->
+        <div class="navbar white_text">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#github">Github</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!--Home-->
+        <div id="home">
+            <!--Video-->
+            <video autoplay muted loop id="video">
+                <source src="./video/typing1.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <!--Text Overlay-->
+            <div class="overlay center white_text">
+                <h1>James' Portfolio</h1>
+                <p>
+                    Welcome to my Portfolio.<br>
+                    <br>
+                    Here you will find some imformation about me and any projects I am working on.<br>
+                    <br>
+                    If it looks a little bare-bones now, that will soon change as I work on new projects and update it.<br>
+                    <br>
+                </p>
+            </div>
+        </div>
+        <!--Home End-->
+
+        <!--About Section-->
+        <div class="row" id="about">
+            <!--Left Column-->
+            <div class="column_2">
+                <img src="" alt="James Mclauchlan"> <!--Will add image in the future-->
+            </div>
+            <!--Right Column-->
+            <div class="column_1">
+                <h1>About</h1>
+                <p>
+                    I am someone who wants to begin a career as a software developer, I enjoy reading, swimming and gaming.
+                    <br>
+                    <br>I am a student of <a href="https://www.pitman-training.com" target="_blank">Pitman training</a>’s Advanced Software & Web Developer Diploma and currently learning the following web and programming languages: HTML, CSS, JavaScript, with more to come later in the course.
+                    <br>
+                    <br>I am working toward becoming a full-stack developer and would love to work with you on your project. <a href="#contact">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+        <!--About Section END-->
+
+        <!--Github Section-->
+        <div class="row" id="github">
+            <!--Left Column-->
+            <div class="column_1">
+                <h1>GitHub</h1>
+                <p>
+                    You can view my coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/JMac-stack" target="_blank">JMac-stack Github</a></p>
+                </p>
+            </div>
+            <!--Right Column-->
+            <div class="column_2">
+                <img src="./img/GitHub.png" alt="Github Logo">
+            </div>
+        </div>
+        <!--Github Section END-->
+
+        <!--Contact Section-->
+        <div class="row" id="contact">
+            <!--Left Column-->
+            <div class="column_2 column_tall">
+                <img src="./img/Email.png" alt="Email">
+            </div>
+            <!--Right Column-->
+            <div class="column_1 column_tall">
+                <h1>Contact</h1>
+                <!--Form-->
+                <form action="https://formspree.io/f/myzkpjlj" method="POST">
+                    <label>Name:</label>
+                        <input type="text" placeholder="Please enter your name here">
+                    <label>Email:</label>
+                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                    <label>Message:</label>
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                        <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+        <!--Contact Section END-->
+
+        <!--Footer Section-->
+        <footer>
+            <p>
+                <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
+                <br>
+            </p>
+        </footer>
+    </body>
+</html>
