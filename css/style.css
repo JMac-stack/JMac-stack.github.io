@@ -2,6 +2,7 @@
 body {
     margin: 0%;
     font-family: monospace;
+    font-size: 1.2em;
 }
 
 .white_text {
@@ -70,6 +71,7 @@ img {
     width: 100%;
     padding: 100px 0 20px 0;
     position: relative;
+    font-size: 2em;
 }
 
 @media screen and (max-width: 576px) {
