@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width">
         <title>James Mclauchlan's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./js/script.js" defer></script>
     </head>
 
     <!--body-->
@@ -14,9 +15,10 @@
         <!--Navbar-->
         <div class="navbar white_text">
             <a href="#home">Home</a>
+            <a href="#slideshow">Slideshow</a>
             <a href="#about">About</a>
             <a href="#github">Github</a>
-            <a href="#contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--Home-->
@@ -41,11 +43,63 @@
         </div>
         <!--Home End-->
 
+        <!--Slideshow section-->
+        <div id="slideshow">
+            <div id="slideshow_background">
+                <div id="slideshow_container">
+                    <!--Slide 0-->
+                    <div class="myslides">
+                        <img class="slideshow_images" src="./img/Computer1.png" alt="">
+                        <div class="text">I look forward to working with you in the future!</div>
+                    </div>
+                    <!--Slide 1-->
+                    <div class="myslides">
+                        <img class="slideshow_images" src="./img/HTML_CSS_and_JavaScript.jpeg" alt="">
+                        <div class="text">I am training to be a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!--Slide 2-->
+                    <div class="myslides">
+                        <img class="slideshow_images" src="./img/Python.png" alt="">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!--Slide 3-->
+                    <div class="myslides">
+                        <img class="slideshow_images" src="./img/C_Sharp_and_Dot_NET.png" alt="">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+                    <!--Slide 4-->
+                    <div class="myslides">
+                        <img class="slideshow_images" src="./img/SQL_and_Database.jpg" alt="">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                    <!--Slide 5-->
+                    <div class="myslides">
+                        <img class="slideshow_images" src="./img/Email2.png" alt="">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!--Arrow buttons-->
+                    <a class="previous" onclick="nextSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="nextSlide(1)">&#10095;</a>
+                </div>
+                <br>
+                <!--Slideshow dots-->
+                <div class="center">
+                    <span class="dot" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                </div>
+            </div>
+        </div>
+        <!--Slideshow section END-->
+
         <!--About Section-->
         <div class="row" id="about">
             <!--Left Column-->
             <div class="column_2">
-                <img src="" alt="James Mclauchlan"> <!--Will add image in the future-->
+                <img class="column_images" src="./img/James1.jpg" alt="James Mclauchlan"> <!--Will add image in the future-->
             </div>
             <!--Right Column-->
             <div class="column_1">
@@ -74,29 +128,28 @@
             </div>
             <!--Right Column-->
             <div class="column_2">
-                <img src="./img/GitHub.png" alt="Github Logo">
+                <img class="column_images" src="./img/GitHub.png" alt="Github Logo">
             </div>
         </div>
         <!--Github Section END-->
 
-        <!--Contact Section-->
-        <div class="row" id="contact">
-            <!--Left Column-->
-            <div class="column_2 column_tall">
-                <img src="./img/Email.png" alt="Email">
-            </div>
-            <!--Right Column-->
-            <div class="column_1 column_tall">
-                <h1>Contact</h1>
-                <!--Form-->
-                <form action="https://formspree.io/f/myzkpjlj" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <!--Contact Form-->
+        <div id="contact">
+            <button onclick="openForm()" class="popup_button">CONTACT</button>
+            <div class="form-popup" id="myform">
+                <form action="https://formspree.io/f/myzkpjlj" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name:</b></label>
+                        <input type="text" name="name" placeholder="Please enter your name here">
+                    <label for="phone"><b>Phone:</b></label>
+                        <input type="text" name="phone" placeholder="Please enter your phone number here">
+                    <label for="email"><b>Email:</b></label>
+                        <input type="text" name="email" placeholder="Please enter your email here">
+                    <label for="message"><b>Message:</b></label>
+                        <input type="text" name="message" placeholder="Please write your message here">
+                        
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>

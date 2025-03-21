@@ -1,139 +1,405 @@
 /*** GENERAL STYLING ***/
-body {
-    margin: 0%;
-    font-family: monospace;
-    font-size: 1.2em;
-}
 
-.white_text {
-    color: white;
-}
-
-.center {
-    text-align: center;
-}
-
-img {
-    border-radius: 10px;
-    max-width: 100%;
-    height: 330px;
-    display: block;
-    margin: auto;
-}
-
-/*** NAV BAR***/
-.navbar {
-    overflow: hidden;
-    background-color: blue;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    top: 0;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    color: white;
-    position: relative;
-    font-size: 20px;
-    padding: 15px;
-}
-
-.navbar a:hover {
-    background-color: lightblue;
-    color: black;
-}
-
-@media screen and (max-width: 576px) {
-    .navbar a {
-        width: 25%; /* This makes each link take up 1/4 of the navbar */
-        font-size: 12px;
-        padding: 15px 0 15px 0;
-        color: yellow;
+    body {
+        margin: 0%;
+        font-family: monospace;
+        font-size: 1.2em;
     }
-}
+
+    .white_text {
+        color: white;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    img {
+        border-radius: 10px;
+        max-width: 100%;
+        height: 330px;
+        display: block;
+        margin: auto;
+    }
+
+    .overlay p:hover, .overlay h1:hover { /*Zooms on hover*/
+        scale: 1.1;
+        transition: 1s;
+    } 
+
+/*** GENERAL STYLING END ***/
+
+/*** NAV BAR ***/
+
+    .navbar {
+        overflow: hidden;
+        background-color: darkblue;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+        border-bottom: solid 2px black;
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .60);
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        position: relative;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .navbar a:hover {
+        cursor: pointer;
+        box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, .75);
+    }
+
+    @media screen and (max-width: 576px) {
+        .navbar a {
+            width: 20%; /* This makes each link take up 1/4 of the navbar */
+            font-size: 12px;
+            padding: 15px 0 15px 0;
+        }
+    }
+
+/*** NAV BAR END ***/
 
 /*** HOME ***/
 
-#video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    z-index: -1;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    padding: 100px 0 20px 0;
-    position: relative;
-    font-size: 2em;
-}
-
-@media screen and (max-width: 576px) {
     #video {
-        display: none;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        z-index: -1;
     }
-}
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        padding: 100px 0 20px 0;
+        position: relative;
+        font-size: 2em;
+    }
+
+    @media screen and (max-width: 576px) {
+        #video {
+            display: none;
+        }
+    }
+
+/*** SLIDESHOW STYLING ***/
+
+    #slideshow_background {
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    .myslides {
+        display: none;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    }
+
+    #slideshow_container {
+        width: 39.5vw;
+        height: auto;
+        position: relative;
+        margin: auto;
+        padding-top: 4%;
+    }
+
+    #Slideshow_Container a {
+        text-decoration: none;
+    }
+
+    .slideshow_images {
+        vertical-align: middle;
+        height: auto;
+        width: 100%;
+    }
+
+    .slideshow_images:hover {
+        scale: 1.1;
+        transition: 5s;
+    } /*Zooms on hover*/
+
+    .text {
+        color: white;
+        padding: 1vw;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-family: Perpetua, Rockwell Extra Bold;
+        letter-spacing: .1vw;
+        font-size: 1.5vw;
+        background-color: rgba(0, 0, 0, 0.75);
+        font-weight: bold;
+        border-radius: 0px 0px 7px 7px;
+    }
+
+    /* Arrows */
+
+    .previous, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 2vw;
+        color: darkgray;
+        font-weight: bold;
+        font-size: 1.5vw;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        transition: 0.6s ease;
+    }
+
+    .previous {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .previous:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+    }
+
+    /* Dots */
+
+    .dot {
+        cursor: pointer;
+        height: 1vw;
+        width: 1vw;
+        margin: .25vw;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        z-index: 1;
+    }
+
+    .active, .dot:hover {
+        background-color: black;
+    }
+
+/*** SLIDESHOW STYLING END ***/
 
 /*** TABLE STYLING ***/
 
-* {
-    box-sizing:border-box;
-}
-
-.column_1 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
-    background-color: white;
-}
-
-@media screen and (max-width: 576px) {
-    .column_1 {
-        overflow: auto;
+    * {
+        box-sizing:border-box;
     }
-}
 
-.column_2 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
-    background-color: darkblue;
-}
+    .column_1 {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        padding-top: 1%;
+        height: 500px;
+        background-color: white;
+        border: solid 2px black;
+    }
 
-.column_tall {
-    height: 500px;
-}
+    /* Screens 576px and smaller will not display background video */
+    @media screen and (max-width: 576px) {
+        #Typing_Video {
+            display: none;
+        }
+    }
 
-.row::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-/*** CONTACT ***/
+    .column_2 {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        padding-top: 1%;
+        height: 500px;
+        background-color: darkblue;
+        border: solid 2px black;
+    }
 
-input[type=text] {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    resize: vertical;
-}
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .column_images {
+        margin-top: 10%;
+        box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+    }
+/*** TABLE STYLING END ***/
+
+/*** CONTACT FORM ***/
+
+    .form-container input[type=text] {
+        width: 100%;
+        padding: .93vw;
+        margin: .6vw 0 .6vw 0;
+        border: none;
+        background: gainsboro;
+        font-size: 1vw;
+        border-radius: 10px;
+        box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .60);
+    }
+
+    .popup_button {
+        position: fixed;
+        bottom: 1.75vw;
+        right: 1.75vw;
+        width: 25vw;
+        background-color: white;
+        color: black;
+        border: solid black 5px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .form-popup {
+        z-index: 8;
+        display: none;
+        position: fixed;
+        bottom: .5vw;
+        right: .5vw;
+    }
+
+    .form-container {
+        max-width: 49vw;
+        padding: 1vw;
+        background-color: darkblue;
+        border: solid black 5px;
+        border-radius: 10px;
+    }
+
+    button {
+        font-family: "trebuchet MS", Optima;
+        letter-spacing: .3vw;
+        font-size: 1.5vw;
+        font-weight: bold;
+        padding: 1.5vw;
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+        border: solid black 5px;
+        border-radius: 10px;
+    }
+
+    button:hover, .form-container .btn:hover {
+        color: white;
+        background-color: black;
+        transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        border-color: silver;
+    }
+
+    .form-container .btn {
+        background-color: white;
+        color: black;
+        border-color: black;
+        margin-bottom: 1vh;
+    }
+
+    .form-container .cancel {
+        background-color: black;
+        color: white;
+        border-color: gray;
+    }
+
+    .form-container .cancel:hover {
+        color: white;
+        background-color: darkred;
+        transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        border-color: black;
+    }
+
+/*** CONTACT FORM END ***/
 
 /*** FOOTER ***/
-footer {
-    padding: 2%;
-    background-color: white;
-}
+    footer {
+        padding: 2%;
+        background-color: white;
+    }
+
+/***** Media Query Section *****/
+
+    /*Media rules for paragraph font size for different screen sizes*/
+
+    @media screen and (max-width: 527px) {
+        p {
+            font-size: 3vw;
+        }
+    }
+    
+    @media screen and (min-width: 528px) and (max-width: 660px) {
+        p {
+            font-size: 2.8vw;
+        }
+    }
+    
+    @media screen and (min-width: 661px) and (max-width: 799px) {
+        p {
+            font-size: 2.5vw;
+        }
+    }
+    
+    @media screen and (min-width: 800px) and (max-width: 924px) {
+        p {
+            font-size: 2.2vw;
+        }
+    }
+    
+    @media screen and (min-width: 925px) and (max-width: 1050px) {
+        p {
+            font-size: 2vw;
+        }
+    }
+    
+    @media screen and (min-width: 1051px) and (max-width: 1310px) {
+        p {
+            font-size:1.9vw;
+        } 
+    }
+    
+    @media screen and (min-width: 1311px) and (max-width: 1535px) {
+        p {
+            font-size: 1.6vw;
+        }
+    }
+    
+    @media screen and (min-width: 1536px) and (max-width: 2269px) {
+        p {
+            font-size: 1.3vw;
+        }
+    }
+    
+    @media screen and (min-width: 2270px) {
+        p {
+            font-size: 1.2vw;
+        }
+    }
+
+    /* Media rules to increase the size of the columns for larger screens */
+    @media screen and (min-width: 1725px) {
+        .Column_1 {
+            height: 550px;
+        }
+        .Column_2 {
+            height: 550px;
+        }
+    }
+
+    /*Media rule to remove margin-top from h1 elements for extra large screens (so that the paragraph text fits in the column*/
+    @media screen and (min-width: 2000px) {
+        h1{
+            margin-top: 0;
+        }
+    }
